@@ -1,0 +1,30 @@
+{
+	"Tags": ["dataproc"],
+	"JAR1": ["gs://1199funds-hadoop-data-prod/AdditionalJarsProd/mongo-spark-connector_2.12-3.0.1.jar",
+ "gs://1199funds-hadoop-data-prod/AdditionalJarsProd/mongo-hadoop-core-2.0.2.jar",
+ "gs://1199funds-hadoop-data-prod/AdditionalJarsProd/org.json.jar", 
+ "gs://1199funds-hadoop-data-prod/AdditionalJarsProd/mongo-java-driver-3.11.0-rc0.jar",
+ "gs://1199funds-hadoop-data-prod/AdditionalJarsProd/sqljdbc4-2.0.jar",
+ "gs://1199funds-hadoop-data-prod/AdditionalJarsProd/ojdbc6.jar",
+ "gs://1199funds-hadoop-data-prod/AdditionalJarsProd/mongodb-driver-core-3.11.0.jar",
+ "gs://1199funds-hadoop-data-prod/AdditionalJarsProd/spark-hive_2.12-2.4.0.jar",
+ "gs://1199funds-hadoop-data-prod/AdditionalJarsProd/google-cloud-bigquery-parent-1.128.0-tests.jar",
+ "gs://1199funds-hadoop-data-prod/AdditionalJarsProd/guava-31.0.1-jre-javadoc.jar",
+ "gs://spark-lib/bigquery/spark-bigquery-latest_2.12.jar",
+ "gs://1199funds-hadoop-data-prod/Fact_Claims_Report/Fact_claims_Report-0.0.1-SNAPSHOT-jar-with-dependencies.jar"
+ 
+],
+	"Service_Account_Scopes": ["https://www.googleapis.com/auth/cloud-platform"],
+	"ClusProperties": {
+		"dataproc:dataproc.conscrypt.provider.enable": "False",
+		"dataproc:yarn.nodemanager.vmem-check-enabled": "False",
+		"dataproc:dataproc.logging.stackdriver.job.driver.enable": "True",
+		"dataproc:dataproc.logging.stackdriver.enable": "True",
+		"dataproc:jobs.file-backed-output.enable": "True"
+	},
+	"JobProperties": {
+		"spark.driver.memory": "96g",
+		"spark.executor.instances": "31"
+	},
+	"Main_Class": ["Main.BI_ClaimsArea_BQProd"]
+}
